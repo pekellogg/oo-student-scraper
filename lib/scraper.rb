@@ -1,6 +1,8 @@
 require "open-uri"
 require "pry"
 require "nokogiri"
+require "awesome_print"
+require "pry-reload"
 
 class Scraper
 
@@ -24,8 +26,19 @@ class Scraper
   
   #:twitter, :linkedin, :github, :blog, :profile_quote, :bio
   def self.scrape_profile_page(profile_url)
-    
+    doc = Nokogiri::HTML(URI.open(profile_url))
+    profile = {}
+    doc.css("div.social-icon-container a").each do |detail|
+      key = detail.attr("href").match(/(?<=:\/\/).*(?=.com)/).to_s
+      key.delete_prefix!("www\.")
+      profile[key.to_sym] = detail.attr("href")
+      end
+    profile[:profile_quote] = doc.css("div.profile-quote").text if doc.css("div.profile-quote")
+    profile[:bio] = doc.css("div.bio-content").children.css("div.description-holder p").text
+    profile
+    binding.pry
   end
 
 end
 
+# Scraper.scrape_profile_page("https://learn-co-curriculum.github.io/student-scraper-test-page/students/joe-burgess.html")
