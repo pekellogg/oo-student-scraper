@@ -1,0 +1,41 @@
+oo-student-scraper QA for xtras
+
+part 1 - grabbed all socials by student to see high-level patterns. corrected in code for "1-offs"
+--------------------------------------------------------------------------------------------------
+	total students = 108
+	
+	"" (13/108);(3/108)
+		Cory Adams https://learn.co/corya0687 ; takes user to login page on learn.co
+		Danny Dawson http://dannydawson.io/ ; DNS_PROBE_FINISHED_NXDOMAIN => might be from IP address not being renewed
+		Seth Goldberg http://jsgold.co ; DNS_PROBE_FINISHED_NXDOMAIN => might be from IP address not being renewed
+		404 (4/108)
+			Scotty Runyan http://runyans7.github.io/ ; 404
+			Preet Dha https://learn-co-curriculum.github.io/student-scraper-test-page/students/http:/github.com/preetdha ; 404
+			Joseph Surla https://learn-co-curriculum.github.io/student-scraper-test-page/students/www.linkedin.com/in/josephsurla ; 404
+			John DePippo https://learn-co-curriculum.github.io/student-scraper-test-page/students/www.linkedin.com/in/johndepippo ; 404
+		"#" (6/108)
+			Minh Nguyen "#"
+			Shana Moore "#"
+			Laura Correa "#"
+			Kyle Gray "#"
+			Sarah Lichter "#"
+			Ben C "#"
+	"uk.linkedin" (1/108)
+		Danny Dawson
+	"johnanthony-dev" (1/108)
+		John Anthony Rivera (3 total, 1st social before li + gh)
+	"MitulMistry" (1/108)
+		Mitul Mistry (4 total, last social after twitter, li + gh)
+	"morgvanny" (1/108)
+		Morgan VanYperen (4 total, last social after twitter, li + gh)
+	"yoshikot.wordpress" (1/108)
+		Yoshi Tamaoki (4 total, last social after twitter, li + gh)
+	"facebook" (3/108)
+		Tony St. Nikolas (4 total, last social after twitter, li + gh, takes user to login page)
+		Michael Perritano (3 total, last social after gh + li, takes user to login page)
+		Alex Barron (3 total, last social after gh + li, takes user to login page, "This page isn't available/nThe link you followed may be broken, or the page may have been removed.")
+		
+part 2 - 
+	
+		
+	
